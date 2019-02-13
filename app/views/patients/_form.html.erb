@@ -1,0 +1,14 @@
+<%= form_with scope: :patient,url: patients_path, local: true do |form| %>
+  
+  <label>
+  <p align="center">
+    <%= form.label :Patient_Name %>
+    <%= form.text_field :name %>
+  </p>
+ 
+ 
+  <p align="center">
+    <%= form.submit %>
+  </p>
+  </label>
+<% end %>

@@ -1,0 +1,20 @@
+<%= link_to "New Appointment" , new_appointment_path %>
+<%= link_to "Back" , controller: "welcome" %>
+
+<h1>List Of All Appointments</h1>
+ 
+<table>
+  <tr>
+    <th>Date Of Appointment</th>
+    <th></th>
+  </tr>
+ 
+  <% @appointments.each do |appointment| %>
+    <tr>
+      <td><%= appointment.appointment_date %></td>
+      <td><%= link_to 'Show', appointment_path(appointment) %></td>
+      <td><%= link_to 'Edit', edit_appointment_path(appointment) %></td>
+      <td><%= link_to 'Destroy', appointment_path(appointment), method: :delete, data: {confirm: "Are You Sure..?"} %></td>
+    </tr>
+  <% end %>
+</table>

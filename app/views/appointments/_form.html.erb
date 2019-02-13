@@ -1,0 +1,22 @@
+<%= form_with scope: :appointment,url: appointments_path, local: true do |form| %>
+  <label>
+  <p align="center">
+    <%= form.label :appointment_date %>
+    <%= form.date_field :appointment_date %>
+  </p>
+
+  <p align="center">
+  
+   Physician_Name <%= form.select :physician_id, options_for_select(Physician.all.map {|p| [p.name, p.id]}, { prompt: '- Please Select a Physician -' } ) %>
+   </p>
+  
+  <p align="center">
+  Patient_Name  <%= form.select :patient_id, options_for_select(Patient.all.map {|p| [p.name,p.id]}, { prompt: '- Please Select a Patient -' } ) %>
+  </p>
+  
+
+  <p align="center">
+    <%= form.submit %>
+  </p>
+  </label>
+<% end %>

@@ -1,0 +1,10 @@
+
+<p>
+  <strong>Appointment_Date:</strong>
+  <%= @appointment.appointment_date %>
+</p>
+
+<%= link_to "List Of All Appointment" , appointments_path %>
+<%= link_to 'Edit', edit_appointment_path(@appointment) %>
+<%= link_to "Back" , controller: "welcome" %>
+

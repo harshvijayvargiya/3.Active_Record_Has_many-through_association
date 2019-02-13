@@ -1,0 +1,20 @@
+<hr>
+<p>
+  <strong>Patient_Name:</strong>
+  <%= @patient.name %>
+</p>
+</hr>
+
+<h2>Patient Name: <%= @patient.name %></h2>
+  <h3><%= @patient.name %> Appointment Date And Physician Name</h3> 
+     <%= @patient.appointments.map { |patient| patient.physician_id } %><br />
+     <%= @patient.appointments.map { |patient| patient.appointment_date } %><br />
+    <%= @patient.appointments.inspect %><br />
+  
+  <br />
+  <hr />
+
+
+<%= link_to "List Of All Patient" , patients_path %>
+<%= link_to 'Edit', edit_patient_path(@patient) %>
+<%= link_to "Back" , controller: "welcome" %>
